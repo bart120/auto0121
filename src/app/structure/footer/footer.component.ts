@@ -5,7 +5,18 @@ import { Component, OnInit } from '@angular/core';
     templateUrl: './footer.component.html'
 })
 export class FooterComponent implements OnInit {
+
+    title: string = 'App en formation';
+
+    marks: Array<any> = [];
+
     constructor() { }
 
-    ngOnInit(): void { }
+    ngOnInit(): void {
+        this.marks = [
+            { name: 'Renault', image: 'renault.jpg' },
+            { name: 'BMW', image: 'bmw.jpg' },
+            { name: 'Audi', image: 'audi.jpg' }
+        ];
+    }
 }

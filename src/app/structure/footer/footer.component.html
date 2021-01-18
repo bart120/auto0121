@@ -1,6 +1,16 @@
 <footer>
-    <mat-icon>copyright</mat-icon>
-    <div>
+    <mat-icon>copyright</mat-icon><span>{{title}}</span>
+    <div *ngIf="marks.length > 0">
         <h3>TOP 3 des marques</h3>
+        <mat-grid-list cols="3" rowHeight="300px">
+            <mat-grid-tile *ngFor=" let mark of marks">
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-title>{{mark.name}}</mat-card-title>
+                    </mat-card-header>
+                    <img mat-card-image src="assets/images/{{mark.image}}" />
+                </mat-card>
+            </mat-grid-tile>
+        </mat-grid-list>
     </div>
 </footer>
