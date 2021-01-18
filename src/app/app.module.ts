@@ -6,6 +6,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
+import { StructureModule } from './structure/structure.module';
+import { SharedModule } from './shared.module';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -13,7 +16,9 @@ import { environment } from '../environments/environment';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    StructureModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
