@@ -12,3 +12,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .my-form > *{
     width: 50%;
 }
+
+.table{
+    width: 100%;
+    table-layout: auto;
+}
+
+.table-striped tr:nth-child(even){
+    background-color: #f2f2f2;
+}

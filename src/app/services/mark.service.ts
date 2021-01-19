@@ -22,4 +22,8 @@ export class MarkService {
         return this.marks;*/
         return this.http.get<Array<MarkModel>>(environment.urlMark);
     }
+
+    getMarkByID(id: number): Observable<MarkModel> {
+        return this.http.get<MarkModel>(`${environment.urlMark}/${id}`);
+    }
 }

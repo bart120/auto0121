@@ -1,1 +1,25 @@
-<p>list-car works!</p>
+<h1>Voitures</h1>
+
+<table class="table table-striped">
+    <tr>
+        <th>Marque</th>
+        <th>Modèle</th>
+        <th>Prix</th>
+        <th>Date</th>
+        <th></th>
+    </tr>
+    <tr *ngFor="let car of listCar">
+        <td>
+            <span *ngIf="car.mark | async as mk; else load">
+                {{mk.name}}
+            </span>
+           <ng-template #load>
+                <mat-spinner></mat-spinner>
+           </ng-template>
+        </td>
+        <td>{{car.model | uppercase }}</td>
+        <td>{{car.price | currency:'€'}}</td>
+        <td>{{car.dateOfCirculation | date:'dd/MM/yyyy'}}</td>
+        <td></td>
+    </tr>
+</table>
