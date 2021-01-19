@@ -9,6 +9,7 @@ import { environment } from '../environments/environment';
 import { StructureModule } from './structure/structure.module';
 import { SharedModule } from './shared.module';
 import { AppRoutingModule } from './app.routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,9 +21,10 @@ import { AppRoutingModule } from './app.routing.module';
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     AppRoutingModule,
     StructureModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [/*MarkService*/],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MarkModel } from 'src/app/models/mark.model';
+import { MarkService } from 'src/app/services/mark.service';
 
 @Component({
     selector: 'app-footer',
@@ -11,13 +12,17 @@ export class FooterComponent implements OnInit {
 
     marks: Array<MarkModel> = [];
 
-    constructor() { }
+    constructor(private servMark: MarkService) { }
 
     ngOnInit(): void {
-        this.marks = [
+        //this.marks = this.servMark.getMarks();
+        /*[
             { name: 'Renault', image: 'renault.jpg' },
             { name: 'BMW', image: 'bmw.jpg' },
             { name: 'Audi', image: 'audi.jpg' }
-        ];
+        ];*/
+        this.servMark.getMarks().subscribe(data => {
+            this.marks = data;
+        });
     }
 }
