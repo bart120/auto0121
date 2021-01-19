@@ -7,5 +7,5 @@ export interface CarModel {
     price: number;
     dateOfCirculation: Date;
     markID: number;
-    mark?: Observable<MarkModel>;
+    mark$: Observable<MarkModel>;
 }

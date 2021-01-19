@@ -19,7 +19,7 @@ export class ListCarComponent implements OnInit {
 
     this.servCar.getCars().subscribe(data => {
       for (const car of data) {
-        car.mark = this.servMark.getMarkByID(car.markID);
+        car.mark$ = this.servMark.getMarkByID(car.markID);
       }
       this.listCar = data;
     });
