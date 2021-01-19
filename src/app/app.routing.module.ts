@@ -1,8 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './authentication/login/login.component';
-import { AddCarComponent } from './car/add-car/add-car.component';
-import { ListCarComponent } from './car/list-car/list-car.component';
 import { HomeComponent } from './master/home/home.component';
 import { NotfoundComponent } from './master/notfound/notfound.component';
 
@@ -10,9 +7,24 @@ const routes: Routes = [
 
 
     { path: 'home', component: HomeComponent },
-    { path: 'car/add', component: AddCarComponent },
+
+    /*{ path: 'car/add', component: AddCarComponent },
     { path: 'car/list', component: ListCarComponent },
-    { path: 'auth/login', component: LoginComponent },
+    { path: 'car/detail', component: DetailCarComponent },*/
+
+    /*{
+        path: 'car', children: [
+            { path: 'add', component: AddCarComponent },
+            { path: 'list', component: ListCarComponent },
+            { path: 'detail', component: DetailCarComponent }
+        ]
+    },*/
+
+    { path: 'car', loadChildren: () => import('./car/car.module').then(x => x.CarModule) },
+
+    //{ path: 'auth/login', component: LoginComponent },
+
+    { path: 'auth', loadChildren: () => import('./authentication/authentication.module').then(x => x.AuthenticationModule) },
 
     { path: 'notfound', component: NotfoundComponent },
 
