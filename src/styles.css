@@ -2,3 +2,13 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.my-form{
+    display: flex;
+    flex-direction: column;
+    margin-left: 2em;
+}
+
+.my-form > *{
+    width: 50%;
+}
