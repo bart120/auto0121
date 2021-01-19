@@ -8,6 +8,7 @@ import { environment } from '../environments/environment';
 
 import { StructureModule } from './structure/structure.module';
 import { SharedModule } from './shared.module';
+import { AppRoutingModule } from './app.routing.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { SharedModule } from './shared.module';
     BrowserModule,
     BrowserAnimationsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    AppRoutingModule,
     StructureModule,
     SharedModule
   ],

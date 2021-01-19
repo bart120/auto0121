@@ -1,25 +1,30 @@
 <mat-toolbar color="primary">
   <div>
     <span>APP</span>
-    <a mat-button href="#">
+    <a mat-button routerLink="/home">
       <mat-icon>home</mat-icon>
       Accueil
     </a>
-    <a mat-button href="#">
+    <a mat-button routerLink="/car/list">
       <mat-icon>directions_car</mat-icon>
       Voitures
     </a>
-    <a mat-button href="#">
+    <a mat-button routerLink="/car/add">
       <mat-icon>add</mat-icon>
       Ajouter
     </a>
-    <a mat-button href="#">
+    <a mat-button routerLink="/auth/login">
       <mat-icon>locked_in</mat-icon>
       Connexion
+    </a>
+    <a mat-button routerLink="/bob">
+      TEST
     </a>
   </div>
 </mat-toolbar>
 
-<div>BOB</div>
+<div>
+  <router-outlet></router-outlet>
+</div>
 
 <app-footer></app-footer>
