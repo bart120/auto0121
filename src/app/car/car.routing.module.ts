@@ -7,7 +7,7 @@ import { ListCarComponent } from './list-car/list-car.component';
 const childRoutes: Routes = [
     { path: 'add', component: AddCarComponent },
     { path: 'list', component: ListCarComponent },
-    { path: 'detail', component: DetailCarComponent }
+    { path: 'detail/:id', component: DetailCarComponent }
 ]
 
 @NgModule({

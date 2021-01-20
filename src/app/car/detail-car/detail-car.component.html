@@ -1,1 +1,9 @@
-<p>detail-car works!</p>
+<mat-card *ngIf="car$ | async as car">
+    <mat-card-header>
+        <mat-card-title>{{car.model}}</mat-card-title>
+        <mat-card-subtitle>{{car.price | currency:'€'}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+    <p>Mise en service le {{car.dateOfCirculation | date:'dd MM yyyy'}}</p>
+    </mat-card-content>
+</mat-card>

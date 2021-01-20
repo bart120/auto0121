@@ -20,6 +20,10 @@
         <td>{{car.model | uppercase }}</td>
         <td>{{car.price | currency:'€'}}</td>
         <td>{{car.dateOfCirculation | date:'dd/MM/yyyy'}}</td>
-        <td></td>
+        <td>
+            <a mat-button [routerLink]="['/car/detail/', car.id]">
+                <mat-icon>search</mat-icon>
+            </a>
+        </td>
     </tr>
 </table>

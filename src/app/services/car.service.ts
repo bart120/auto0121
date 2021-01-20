@@ -25,4 +25,8 @@ export class CarService {
     delete(id: number): Observable<CarModel> {
         return this.http.delete<CarModel>(`${environment.urlCar}/${id}`);
     }
+
+    getCarByID(id: number): Observable<CarModel> {
+        return this.http.get<CarModel>(`${environment.urlCar}/${id}`);
+    }
 }
