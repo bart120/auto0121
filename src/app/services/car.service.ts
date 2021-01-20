@@ -13,4 +13,16 @@ export class CarService {
     getCars(): Observable<Array<CarModel>> {
         return this.http.get<Array<CarModel>>(environment.urlCar);
     }
+
+    insert(car: CarModel): Observable<CarModel> {
+        return this.http.post<CarModel>(environment.urlCar, car);
+    }
+
+    update(car: CarModel): Observable<CarModel> {
+        return this.http.put<CarModel>(`${environment.urlCar}/${car.id}`, car);
+    }
+
+    delete(id: number): Observable<CarModel> {
+        return this.http.delete<CarModel>(`${environment.urlCar}/${id}`);
+    }
 }

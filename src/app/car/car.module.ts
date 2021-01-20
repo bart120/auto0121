@@ -5,6 +5,7 @@ import { ListCarComponent } from './list-car/list-car.component';
 import { DetailCarComponent } from './detail-car/detail-car.component';
 import { CarRoutingModule } from './car.routing.module';
 import { SharedModule } from '../shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { SharedModule } from '../shared.module';
   imports: [
     CommonModule,
     CarRoutingModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ]
 })
 export class CarModule { }

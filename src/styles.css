@@ -21,3 +21,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .table-striped tr:nth-child(even){
     background-color: #f2f2f2;
 }
+
+
+mat-form-field.ng-valid .mat-form-field-label span{
+    color:green;
+}

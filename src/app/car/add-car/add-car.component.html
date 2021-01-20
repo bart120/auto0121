@@ -1,1 +1,28 @@
-<p>add-car works!</p>
+<h2>Ajouter une voiture</h2>
+
+<form class="my-form" novalidate [formGroup]="formCar" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+        <input matInput type="text" placeholder="Modèle" formControlName="model" />
+        <mat-error>Le modèle est obligatoire</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput type="text" placeholder="Prix" formControlName="price" />
+        <mat-error>Le prix est obligatoire</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Mise en circulation" formControlName="dateOfCirculation"
+            [matDatepicker]="picker" />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error>La date est obligatoire</mat-error>
+    </mat-form-field>
+    <mat-form-field *ngIf="marks$ | async as marks">
+        <mat-select matInput  placeholder="Modèle" formControlName="markID">
+            <mat-option *ngFor="let mark of marks" [value]="mark.id">{{mark.name}}</mat-option>
+        </mat-select>
+        <mat-error>La marque est obligatoire</mat-error>
+    </mat-form-field>
+    <div>
+        <button type="submit" mat-raised-button color="primary" [disabled]="formCar.invalid">Enregistrer</button>
+    </div>
+</form>
