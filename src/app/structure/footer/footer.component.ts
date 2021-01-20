@@ -21,7 +21,7 @@ export class FooterComponent implements OnInit {
             { name: 'BMW', image: 'bmw.jpg' },
             { name: 'Audi', image: 'audi.jpg' }
         ];*/
-        this.servMark.getMarks().subscribe(data => {
+        this.servMark.getMarksOrderByNameInterval().subscribe(data => {
             this.marks = data;
         });
     }
